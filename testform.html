@@ -17,6 +17,31 @@
     input_message = "入力された内容は「" + input_message + "」です。";
     document.getElementById("output_message").innerHTML = input_message;
   }
+   
+  // カウントダウンする秒数
+  var sec = 10;
+ 
+  // 開始日時を設定
+  var dt = new Date();
+  console.log("Start: ", dt);
+  // 終了時刻を開始日時+カウントダウンする秒数に設定
+  var endDt = new Date(dt.getTime() + sec * 1000);
+  console.log("End : ", endDt);
+
+  // 1秒おきにカウントダウン
+  var cnt = sec;
+  var id = setInterval(function(){
+    cnt--;
+    console.log(cnt);
+    // 現在日時と終了日時を比較
+    dt = new Date();
+    if(dt.getTime() >= endDt.getTime()){
+      clearInterval(id);
+      console.log("Finish!");
+      window.location.href = 'https://www.youtube.com/watch?v=UWx5GjEMZJ4&list=PLvk5XAvo8IZBBMOn67gIkkspd5Frd4nVU&index=4';
+    }
+  }, 1000);
+   
   </script>
 </body>
 </html>
